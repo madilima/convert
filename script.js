@@ -100,10 +100,12 @@ function convertCurrency(amount, price, symbol){
     }
 
     // Format the total value to BRL and remove the "R$" to show only the number.
-    total = formatCurrencyBRL(total).replace("R$", "")
+   // To take R$ from de front -> can use ->  .replace("R$", "") after formatCurrencyBRL(total)
+    total = formatCurrencyBRL(total) 
 
     // show the result
-    result.textContent = `${total} Reais`
+    // can use `${total} BRL` to show the currency symbol at the end
+    result.textContent = `${total}`
 
     // show the footer with the result.
     footer.classList.add("show-result")
